@@ -15,10 +15,9 @@ docs = splitter.split_documents(documents)
 embeddings = OllamaEmbeddings(model="nomic-embed-text")
 vectorstore = FAISS.from_documents(docs, embeddings)
 
-prompt = PromptTemplate.from_template("Ask something on langchain?")
 chat = ChatOllama(model="llama3")
 
-query = input("🔍 Ask a question about LangChain: ")
+query = input("Ask a question about LangChain: ")
 
 
 
@@ -40,4 +39,4 @@ prompt = PromptTemplate.from_template(template)
 final_prompt = prompt.format(context=context, question=query)
 
 response = chat.invoke(final_prompt)
-print("🤖", response.content)
+print(response.content)
