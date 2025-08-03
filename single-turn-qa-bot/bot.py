@@ -7,7 +7,6 @@ from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
 
 
-
 loader = TextLoader("data/data.txt")
 documents = loader.load()
 splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
@@ -20,8 +19,7 @@ chat = ChatOllama(model="llama3")
 query = input("Ask a question about LangChain: ")
 
 
-
-relevant_docs = vectorstore.similarity_search(query, k =3)
+relevant_docs = vectorstore.similarity_search(query, k=3)
 context = "\n\n".join([doc.page_content for doc in relevant_docs])
 # Prompt template that includes the context and user question
 template = """
