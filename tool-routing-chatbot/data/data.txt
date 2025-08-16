@@ -1,0 +1,17 @@
+LangChain is a framework for building applications powered by large language models (LLMs). It provides modular components to handle tasks like prompt creation, model invocation, memory, retrieval, and agent orchestration. It enables developers to create complex workflows using chains and graphs.
+
+One core component is the PromptTemplate, which allows dynamic prompt generation based on input variables. This is useful when working with reusable prompt structures in applications like chatbots, summarization tools, or RAG systems.
+
+LangChain supports both LLMs and ChatModels. LLMs are stateless (e.g. GPT-3), while ChatModels support conversational memory and message history (e.g. GPT-4 Chat or Claude). The framework abstracts the differences between these interfaces.
+
+Chains in LangChain allow you to connect a prompt, an LLM, and an output parser together. You can build more complex chains using SequentialChain, SimpleSequentialChain, or even LangGraph for event-driven flows.
+
+LangChain also offers support for document loading and chunking. Common loaders include TextLoader for plain files, PyPDFLoader for PDFs, and WebBaseLoader for websites. After loading, documents are typically split using RecursiveCharacterTextSplitter, which preserves context between chunks.
+
+Once split, documents can be embedded using embedding models like OpenAIEmbeddings or OllamaEmbeddings. These embeddings are stored in vector databases such as FAISS, Chroma, Pinecone, or Weaviate. This allows for fast semantic search, enabling the retrieval of contextually relevant information at query time.
+
+Retrieval-Augmented Generation (RAG) is a popular pattern that combines vector search with LLM generation. A user query is embedded, similar chunks are retrieved, and the LLM generates an answer grounded in those documents. This improves factual accuracy and domain specificity.
+
+LangChain's agent capabilities enable models to interact with tools, perform actions based on intermediate outputs, and dynamically plan execution paths. Tool calling and agent frameworks are key to building autonomous AI systems.
+
+LangChain works well with local LLMs using Ollama, LM Studio, or cloud-hosted APIs like OpenAI and Anthropic. It’s a fast-growing framework for developers exploring the intersection of language models and real-world applications.
