@@ -1,0 +1,2 @@
+LangGraph is a library for building stateful, multi-actor applications with LLMs.
+It extends LangChain by allowing you to define agents or chains as nodes in a directed graph.
